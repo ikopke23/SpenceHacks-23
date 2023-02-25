@@ -17,14 +17,37 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
 
     <title>The Green and Gray</title>
+
+
 </head>
 
+  
+
+
+
 <body>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32">
-                <use xlink:href="#bootstrap"></use>
-            </svg>
+
             <span class="fs-4">City Sustainer</span>
         </a>
         <hr>
@@ -69,25 +92,19 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body"> <!--  Body of The Accordian-->
-                        <ul>
-                            <li> Subsidize Local Business
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        Default radio
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault2" checked>
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        Default checked radio
-                                    </label>
-                                </div>
-                            </li>
-                            <li> Stuff</li>
-                        </ul>
+                        <div class="form-check"> <!-- This is a radio meaning only one of these two things can be checked-->
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Subsidize Local Business
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Subsidize Chain Businesses
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div> <!-- End of Suburban Section-->
@@ -102,10 +119,19 @@
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body"> <!--  Body of The Accordian-->
-                        <ul>
-                            <li> Subsidize Food Production</li>
-                            <li> Stuff</li>
-                        </ul>
+                        <div class="form-check"> <!-- This is a radio meaning only one of these two things can be checked-->
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <h4 class="fs-6 tooltip-test" title="">Subsidize Farmers</h4>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Stuff
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div> <!-- END of Rural section-->
@@ -120,10 +146,20 @@
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body"> <!--  Body of The Accordian-->
-                        <ul>
-                            <li> Privatize</li>
-                            <li> subsidize Hospitals</li>
-                        </ul>
+                        <div class="form-check"> <!-- This is a radio meaning only one of these two things can be checked-->
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <h4 class="fs-6 tooltip-test" title="No cost! 
+The Gray Party supports this
+The Green Party doesn't like this">Privatize</h4>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">     
+                                <h4 class="fs-6 tooltip-test" title="Costs 10 Mil">Subsidize Hospitals</h4>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div> <!-- End of Rural Section-->
@@ -138,16 +174,33 @@
                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body"> <!--  Body of The Accordian-->
-                        <ul>
-                            <li> Subsidize fossil Fuels</li>
-                            <li> Build Windmills</li>
-                            <li> Build Solar Pannels</li>
-                        </ul>
+                        <div class="form-check"> <!-- This is a radio meaning only one of these two things can be checked-->
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <h4 class="fs-6 tooltip-test" title="The Gray party is invested in this
+                                 The Green Party does not like this">Fossil fuels</h4>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">     
+                                <h4 class="fs-6 tooltip-test" title="the Green Party Dislikes this">Natural Gas</h4>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                            <label class="form-check-label" for="flexRadioDefault3">     
+                                <h5 class="fs-6 tooltip-test" title="Windmills are great for Rural Areas!"> Windmills</h5>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div> <!-- End of Power Section-->
         </div> <!-- end accordian -->
         <hr>
+        <span class="hidden"></span>
+        <h1 class="fs-4">Opinion</h1>
+
     </div>
 
 

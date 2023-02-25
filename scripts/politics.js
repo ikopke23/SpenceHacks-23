@@ -15,6 +15,7 @@ let grayNum = 0;
 let greenNum = 0;
 let budget = 1000000000;
 let party = "green"; /* or */ // "gray";
+let unemployed = 5;
 
 function update(){
     budget += tax;
