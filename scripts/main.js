@@ -11,11 +11,8 @@ function update() {}
 
 function draw() {
     Panda.draw.clear();
-    Panda.draw.backgroundColor = "pink";
-    sprites.congress.draw({
-        width: 0.5,
-        height: 0.5,
-    });
+    Panda.draw.backgroundColor = [255, 255, 255];
+    sprites.congress.draw();
 }
 
 main();
