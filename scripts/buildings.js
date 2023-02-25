@@ -1,29 +1,63 @@
 import { Panda } from "./canvas/panda.js";
 
-class Building {
-    constructor() {
-        this.x = x;
-        this.y = y;
+class Congress {
+    draw() {
+        sprites.congress.draw(Panda.width / 2, Panda.height / 2, {
+            width: 150,
+            height: 150,
+        });
     }
 }
 
-export let sprites = {
-    congress: null,
-    house: null,
-    skyscrapers: [],
+class Skyscraper {
+    constructor() {
+        this.sprite = sprites.skyscrapers[Math.floor(Math.random() * 7)];
+        this.x = (5 / 8) * Panda.width + Math.random() * 300;
+        this.y = Panda.height / 6 + Math.random() * 300;
+    }
+
+    draw() {
+        this.sprite.draw(this.x, this.y, {
+            width: 100,
+            height: 150,
+        });
+    }
+}
+
+class House {
+    constructor() {
+        this.sprite = sprites.houses[Math.floor(Math.random() * 3)];
+        this.x = (5 / 8) * Panda.width + Math.random() * 400;
+        this.y = (3 / 6) * Panda.height + Math.random() * 400;
+    }
+
+    draw() {
+        this.sprite.draw(this.x, this.y, {
+            width: 100,
+            height: 100,
+        });
+    }
+}
+
+let sprites = {
+    congress: await Panda.sprite("assets/congress.jpg"),
+    houses: await Promise.all([...Array(3).keys()].map((i) => Panda.sprite(`assets/house${i + 1}.jpg`))),
+    skyscrapers: await Promise.all([...Array(7).keys()].map((i) => Panda.sprite(`assets/skyscraper${i + 1}.jpg`))),
 };
 
-let buildings = [];
+const Buildings = {
+    buildings: [],
 
-export async function load() {
-    sprites.congress = await Panda.sprite("assets/congress.jpg");
-    sprites.house = await Panda.sprite("assets/house.jpg");
+    init() {
+        const skyscrapers = [...Array(6)].map(() => new Skyscraper());
+        const houses = [...Array(6)].map(() => new House());
+        this.buildings.push(new Congress(), ...skyscrapers, ...houses);
+    },
 
-    let skyscrapers = [];
-    for (let i = 1; i < 7; i++) {
-        skyscrapers.push(Panda.sprite(`assets/skyscraper${i + 1}.jpg`));
-    }
+    draw() {
+        this.buildings.sort((a, b) => a.y > b.y);
+        this.buildings.forEach((building) => building.draw());
+    },
+};
 
-    sprites.skyscrapers = await Promise.all(skyscrapers);
-    console.log("loaded", sprites);
-}
+export default Buildings;
