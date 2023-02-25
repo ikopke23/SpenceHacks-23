@@ -8,7 +8,7 @@ const camera = {
     height: 0,
 
     /** Needed to use `camera.offsetX / Y`. You probably want `panda.init()` instead. */
-    init(width: number, height: number, x?: number, y?: number): void {
+    init(width, height, x, y) {
         this.width = width;
         this.height = height;
         this.x = x ?? width / 2;
@@ -26,7 +26,7 @@ const camera = {
     },
 
     /** Smoothly moves the camera to where you need to go! Make sure to put this inside your `update()` function. */
-    move(x: number, y: number, speed = 1) {
+    move(x, y, speed = 1) {
         this.x = (1 - speed) * this.x + speed * x;
         this.y = (1 - speed) * this.y + speed * y;
     },

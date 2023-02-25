@@ -5,7 +5,7 @@ import draw from "./draw.js";
 import * as Shapes from "./shapes.js";
 import * as Mathy from "./math.js";
 
-let rafID: number;
+let rafID;
 
 const Panda = {
     // UTILIIES //
@@ -18,10 +18,10 @@ const Panda = {
     width: 0,
     height: 0,
     frame: 0,
-    context: null as CanvasRenderingContext2D | null,
+    context: null,
 
     /** Makes canvas and system variables. Run before calling `panda.run`! */
-    init(options?: { container?: HTMLElement; pixelated?: boolean; width?: number; height?: number }): void {
+    init(options = {}) {
         if (options?.container) {
             for (let i = 0; i < options.container.children.length; i++) {
                 options.container.children[i].remove();
@@ -42,7 +42,7 @@ const Panda = {
     paused: true,
 
     /** The main game loop! `update(dt)` and `draw()` run every frame. `load()` runs before the loop.  */
-    async run(update: (dt: number) => void, draw: () => void, load?: () => Promise<void>): Promise<void> {
+    async run(update, draw, load) {
         if (load) await load();
         if (!Panda.context) throw new Error("please initialize panda using panda.init() x_x");
         if (rafID) this.stop();
@@ -50,7 +50,7 @@ const Panda = {
         let last = 0;
         let dt = 0;
 
-        const loop = (time: number) => {
+        const loop = (time) => {
             dt = (time - last) / 1000;
             last = time;
 
@@ -68,13 +68,13 @@ const Panda = {
     },
 
     /** Stops the game. (If you only want to pause, try `panda.paused = true`) */
-    stop(): void {
+    stop() {
         if (!rafID) throw new Error(`can't stop an animation that hasn't begun yet x_x`);
         window.cancelAnimationFrame(rafID);
         this.paused = true;
     },
 
-    async sprite(src: string, options?: { hFrame?: number; vFrame?: number; frame?: number }): Promise<Shapes.Sprite> {
+    async sprite(src, options = {}) {
         const image = new Image();
         image.src = src;
         await image.decode().catch(() => {
@@ -83,7 +83,7 @@ const Panda = {
         return new Shapes.Sprite(image, options?.hFrame, options?.vFrame, options?.frame);
     },
 
-    sound(src: string, { volume }: { volume?: number } = {}): HTMLAudioElement {
+    sound(src, { volume }) {
         const audio = new Audio();
         audio.src = src;
         audio.volume = volume ?? 1;
