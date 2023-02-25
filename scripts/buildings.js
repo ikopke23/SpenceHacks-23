@@ -19,7 +19,7 @@ class Skyscraper {
     draw() {
         this.sprite.draw(this.x, this.y, {
             width: 100,
-            height: 150,
+            height: 200,
         });
     }
 }
@@ -41,8 +41,8 @@ class House {
 
 export class WindTurbine {
     constructor() {
-        this.x = (1 / 4) * Panda.width + Math.random() * 200;
-        this.y = (1 / 6) * Panda.width + Math.random() * 100;
+        this.x = (1 / 8) * Panda.width + Math.random() * 200;
+        this.y = (1 / 6) * Panda.width + Math.random() * 200;
     }
 
     draw() {
@@ -55,8 +55,8 @@ export class WindTurbine {
 
 export class FossilFuel {
     constructor() {
-        this.x = (1 / 4) * Panda.width + Math.random() * 200;
-        this.y = (1 / 2) * Panda.height + Math.random() * 200;
+        this.x = (1 / 8) * Panda.width + Math.random() * 200;
+        this.y = (5 / 8) * Panda.height + Math.random() * 200;
     }
 
     draw() {
