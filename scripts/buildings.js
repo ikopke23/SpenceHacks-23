@@ -68,11 +68,11 @@ export class FossilFuel {
 }
 
 let sprites = {
-    congress: await Panda.sprite("assets/congress.jpg"),
-    houses: await Promise.all([...Array(3).keys()].map((i) => Panda.sprite(`assets/house${i + 1}.jpg`))),
+    congress: await Panda.sprite("assets/congress.png"),
+    houses: await Promise.all([...Array(3).keys()].map((i) => Panda.sprite(`assets/house${i + 1}.png`))),
     skyscrapers: await Promise.all([...Array(7).keys()].map((i) => Panda.sprite(`assets/skyscraper${i + 1}.jpg`))),
-    wind: await Panda.sprite("assets/wind.jpg"),
-    fossil: await Panda.sprite("assets/fossil.jpg"),
+    wind: await Panda.sprite("assets/wind.png"),
+    fossil: await Panda.sprite("assets/fossil.png"),
 };
 
 const Buildings = {
