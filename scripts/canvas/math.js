@@ -1,10 +1,8 @@
-import Noise from "./lib/simplex-noise.js";
-
 export class Vector {
-    x: number;
-    y: number;
+    x;
+    y;
 
-    constructor(x: number, y: number) {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
     }
@@ -13,31 +11,31 @@ export class Vector {
         return Math.sqrt(this.x ** 2 + this.y ** 2);
     }
 
-    set magnitude(magnitude: number) {
+    set magnitude(magnitude) {
         const vector = this.normalize().multiply(magnitude);
         this.x = vector.x;
         this.y = vector.y;
     }
 
-    add(vector: Vector) {
+    add(vector) {
         const x = this.x + vector.x;
         const y = this.y + vector.y;
         return new Vector(x, y);
     }
 
-    subtract(vector: Vector) {
+    subtract(vector) {
         const x = this.x - vector.x;
         const y = this.y - vector.y;
         return new Vector(x, y);
     }
 
-    multiply(scalar: number) {
+    multiply(scalar) {
         const x = this.x * scalar;
         const y = this.y * scalar;
         return new Vector(x, y);
     }
 
-    divide(scalar: number) {
+    divide(scalar) {
         const x = this.x / scalar;
         const y = this.y / scalar;
         return new Vector(x, y);
@@ -51,22 +49,22 @@ export class Vector {
         return new Vector(x, y);
     }
 
-    moveToward(target: Vector, delta: number) {
+    moveToward(target, delta) {
         const direction = target.subtract(this);
         direction.magnitude > delta && (direction.magnitude = delta);
         return this.add(direction);
     }
 
-    dot(vector: Vector): number {
+    dot(vector) {
         return this.x * vector.x + this.y * vector.y;
     }
 }
 
 export class Complex {
-    r: number;
-    i: number;
+    r;
+    i;
 
-    constructor(real: number, imaginary: number) {
+    constructor(real, imaginary) {
         this.r = real;
         this.i = imaginary;
     }
@@ -75,25 +73,25 @@ export class Complex {
         return Math.sqrt(this.r ** 2 + this.i ** 2);
     }
 
-    add(complex: Complex) {
+    add(complex) {
         const r = this.r + complex.r;
         const i = this.i + complex.i;
         return new Complex(r, i);
     }
 
-    subtract(complex: Complex) {
+    subtract(complex) {
         const r = this.r - complex.r;
         const i = this.i - complex.i;
         return new Complex(r, i);
     }
 
-    multiply(complex: Complex) {
+    multiply(complex) {
         const r = this.r * complex.r - this.i * complex.i;
         const i = this.r * complex.i + this.i * complex.r;
         return new Complex(r, i);
     }
 
-    power(exponent: number) {
+    power(exponent) {
         let out = new Complex(1, 0);
         for (let i = 0; i < exponent; i++) {
             out = out.multiply(this);
@@ -107,5 +105,3 @@ export class Complex {
         return new Complex(r, i);
     }
 }
-
-export { Noise };
