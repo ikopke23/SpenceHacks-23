@@ -1,5 +1,6 @@
 import { Panda } from "./canvas/panda.js";
 import Buildings from "./buildings.js";
+import "./power.js";
 
 function main() {
     const container = document.querySelector("#canvas");
@@ -19,11 +20,3 @@ function draw() {
 }
 
 main();
-
-
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})

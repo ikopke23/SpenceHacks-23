@@ -39,10 +39,25 @@ class House {
     }
 }
 
+export class WindTurbine {
+    constructor() {
+        this.x = (1 / 4) * Panda.width + Math.random() * 200;
+        this.y = (1 / 4) * Panda.width + Math.random() * 200;
+    }
+
+    draw() {
+        sprites.wind.draw(this.x, this.y, {
+            width: 120,
+            height: 150,
+        });
+    }
+}
+
 let sprites = {
     congress: await Panda.sprite("assets/congress.jpg"),
     houses: await Promise.all([...Array(3).keys()].map((i) => Panda.sprite(`assets/house${i + 1}.jpg`))),
     skyscrapers: await Promise.all([...Array(7).keys()].map((i) => Panda.sprite(`assets/skyscraper${i + 1}.jpg`))),
+    wind: await Panda.sprite("assets/wind.jpg"),
 };
 
 const Buildings = {
@@ -52,6 +67,10 @@ const Buildings = {
         const skyscrapers = [...Array(6)].map(() => new Skyscraper());
         const houses = [...Array(6)].map(() => new House());
         this.buildings.push(new Congress(), ...skyscrapers, ...houses);
+    },
+
+    build(building) {
+        this.buildings.push(building);
     },
 
     draw() {
