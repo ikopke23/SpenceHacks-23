@@ -41,8 +41,8 @@ class House {
 
 export class WindTurbine {
     constructor() {
-        this.x = (1 / 8) * Panda.width + Math.random() * 200;
-        this.y = (1 / 6) * Panda.width + Math.random() * 200;
+        this.x = (1 / 8) * Panda.width + Math.random() * 400;
+        this.y = (1 / 6) * Panda.width + Math.random() * 400;
     }
 
     draw() {
