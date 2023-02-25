@@ -24,8 +24,8 @@ windmill.onclick = () => {
 
 const Factory = {
     cost: 2000000,
-    greenSupport: -10,
-    graySupport: 10,
+    greenSupport: -5,
+    graySupport: 5,
 };
 
 const fossil = document.querySelector("#fossil");
