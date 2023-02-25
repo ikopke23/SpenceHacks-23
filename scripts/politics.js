@@ -8,12 +8,13 @@
 
 export let gameData = {
     ruralOpinion: 0,
-    solarOpinion: 0,
+    subOpinion: 0,
     urbanOpinion: 0,
-    graySupport: 30,
-    greenSupport: 30,
+    graySupport: 50,
+    greenSupport: 50,
     budget: 1000000000,
     unemployed: 5,
+    sustainability: 5
 };
 
 let date = "Year 1 Month 1";
@@ -21,6 +22,7 @@ let date = "Year 1 Month 1";
 
 export function update() {
     gameData.budget += tax;
+    UI();
     // ruralOpinion = getRuralOpinion();
     // solarOpinion = getSuburbanOpinion();
     // uOp = getUrbanOpinion();
@@ -30,9 +32,25 @@ export function update() {
 
 
 
-function UI(){
+export function UI(){
     //edit budget
-    let budgetDisplay = document.getElementById("budget");
-    budgetDisplay.innerText = "Budget = " + gameData.budget;
-    //edit ruralOpinion
+    const budgetDisplay = document.getElementById("budget");
+    budgetDisplay.text = "Budget = " + gameData.budget;
+    
+    //edit unemployment
+    const unem = document.getElementById('Unemployment');
+    unem.text = "Unemployment = " + gameData.unemployment + "%";
+
+    //edit unemployment
+    const green = document.getElementById('greenSup');
+    green.text = "Green Party Support = " + gameData.greenSupport;
+    
+    //edit unemployment
+    const gray = document.getElementById('graySup');
+    gray.text = "Gray Party support = " + gameData.graySupport;
+
+    //edit sustainability
+    const sustain = document.getElementById('sustainability');
+    sustain.text = "Current Sustainability = " + gameData.sustainability;
+
 }
