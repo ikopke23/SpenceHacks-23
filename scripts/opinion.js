@@ -1,25 +1,30 @@
 
 //getOpinions
 
-function getRuralOpinion(){
 
+export function getRuralOpinion(){
+    
     return opinion;
 }//end Rural Opinion
 
-function getSuburbanOpinion(){
+export function getSuburbanOpinion(){
 
     return opinion;
 }//end Suburban Opinion
 
-function getUrbanOpinion(){
+export function getUrbanOpinion(){
 
     return opinion;
 }//end Urban Opinion
 
-function greenParty(){
+//will return a number out of 100 for num of supporters 
+export function greenSupporters(){
     
+}//end greenparty
+
+//will return a number out of 100 for num of supporters 
+export function graySupporters(){
+
 }
 
-function grayParty(){
 
-}
