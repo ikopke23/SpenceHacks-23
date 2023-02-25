@@ -9,3 +9,5 @@ farm.jpg - https://www.vectorstock.com/royalty-free-vector/pixel-art-american-fa
 wind.jpg - https://www.vectorstock.com/royalty-free-vector/pixel-wind-energy-turbine-isolated-vector-36493889
 
 nuclear.jpg - https://www.nicepng.com/ourpic/u2w7e6i1w7w7y3e6_nuclear-power-plant-nuclear-reactor-pixel-art/
+
+fossil.jpg - https://www.deviantart.com/tdeleeuw/art/Isometric-Factory-and-Townhouse-pixel-art-442080768

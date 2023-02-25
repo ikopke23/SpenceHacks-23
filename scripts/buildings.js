@@ -42,11 +42,25 @@ class House {
 export class WindTurbine {
     constructor() {
         this.x = (1 / 4) * Panda.width + Math.random() * 200;
-        this.y = (1 / 4) * Panda.width + Math.random() * 200;
+        this.y = (1 / 6) * Panda.width + Math.random() * 100;
     }
 
     draw() {
         sprites.wind.draw(this.x, this.y, {
+            width: 120,
+            height: 150,
+        });
+    }
+}
+
+export class FossilFuel {
+    constructor() {
+        this.x = (1 / 4) * Panda.width + Math.random() * 200;
+        this.y = (1 / 2) * Panda.height + Math.random() * 200;
+    }
+
+    draw() {
+        sprites.fossil.draw(this.x, this.y, {
             width: 120,
             height: 150,
         });
@@ -58,6 +72,7 @@ let sprites = {
     houses: await Promise.all([...Array(3).keys()].map((i) => Panda.sprite(`assets/house${i + 1}.jpg`))),
     skyscrapers: await Promise.all([...Array(7).keys()].map((i) => Panda.sprite(`assets/skyscraper${i + 1}.jpg`))),
     wind: await Panda.sprite("assets/wind.jpg"),
+    fossil: await Panda.sprite("assets/fossil.jpg"),
 };
 
 const Buildings = {

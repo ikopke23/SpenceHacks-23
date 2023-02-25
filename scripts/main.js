@@ -1,6 +1,6 @@
 import { Panda } from "./canvas/panda.js";
 import Buildings from "./buildings.js";
-import "./power.js";
+import "./build.js";
 
 function main() {
     const container = document.querySelector("#canvas");
